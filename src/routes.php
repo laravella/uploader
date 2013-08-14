@@ -1,4 +1,5 @@
 <?php
+/*
 Route::filter('uploadauth', function()
         {
             if (Request::ajax())
@@ -14,6 +15,11 @@ Route::filter('uploadauth', function()
         });
         
 Route::when('upload/*', 'uploadauth');
-Route::controller('upload', 'UploadController');
+*/
+//Route::controller('upload', 'UploadController');
+
+Route::get('uploader', function() {
+    return "uploader";
+});
 
 ?>
