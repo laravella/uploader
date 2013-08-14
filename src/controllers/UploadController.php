@@ -1,11 +1,4 @@
-<?php
-
-/**
- * Description of UploadController
- *
- * @author Victor
- */
-class UploadController extends BaseController {
+<?php class UploadController extends BaseController {
 
     protected $options;
     // PHP File Upload error message codes:
@@ -31,8 +24,8 @@ class UploadController extends BaseController {
 
     public function getIndex()
     {
-//    protected $layout = 'crud::layouts.default';
-        return View::make('crud::layouts.default')->nest('content', 'uploader:getupload', $params->asArray());
+//    protected $layout = 'crud::layouts.default'; //$params->asArray()
+        return View::make('crud::layouts.default')->nest('content', 'uploader:getupload', array());
 //        return View::make("crud::uploadview");
     }
 
