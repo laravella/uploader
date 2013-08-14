@@ -1,4 +1,4 @@
-<?php class UploadController extends BaseController {
+<?php class UploadController extends DbController {
 
     protected $options;
     // PHP File Upload error message codes:
@@ -22,6 +22,24 @@
         'min_height' => 'Image requires a minimum height'
     );
 
+    protected $layout = 'crud::layouts.default';
+    public $displayType = self::HTML; //or self::JSON or self::XML or self::HTML
+
+    public function postUpload()
+    {
+        $action = 'postUpload';
+    }
+
+    public function getUpload()
+    {
+
+        $action = 'getUpload';
+
+        $params = $this->__makeParams(self::INFO, "Enter data to insert.", null, 'medias', $action);
+
+        return View::make($this->layout)->nest('content', $params->view->name, $params->asArray());
+    }    
+    
     public function getIndex()
     {
 //    protected $layout = 'crud::layouts.default'; //$params->asArray()
