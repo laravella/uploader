@@ -1,4 +1,4 @@
-uploader
-========
+Uploader
+==========
 
-A file upload package for use with CRUD
+A file upload package for use with laravella/crud
