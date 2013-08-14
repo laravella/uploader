@@ -32,17 +32,6 @@ class UploaderServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        // Register 'underlyingclass' instance container to our UnderlyingClass object
-        $this->app['dbgopher'] = $this->app->share(function($app)
-        {
-            return new DbGopher;
-        });
-
-        $this->app->booting(function()
-            {
-              $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-              $loader->alias('DbGopher', 'Laravella\Uploader\Facades\DbGopher');
-            });
 	}
 
 	/**

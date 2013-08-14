@@ -14,6 +14,6 @@ Route::filter('uploadauth', function()
         });
         
 Route::when('upload/*', 'uploadauth');
+Route::controller('upload', 'UploadController');
 
-	Route::controller('upload', 'UploadController');
 ?>
