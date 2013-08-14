@@ -26,3 +26,7 @@
 </form>
 @endif
 @stop
+
+@section('content')
+    @yield('getUpload')
+@stop

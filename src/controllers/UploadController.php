@@ -7,16 +7,6 @@
  */
 class UploadController extends BaseController {
 
-    public function getIndex()
-    {
-        return View::make("crud::uploadview");
-    }
-
-    public function missingMethod($parameters = array())
-    {
-        return "Missing Method";
-    }
-
     protected $options;
     // PHP File Upload error message codes:
     // http://php.net/manual/en/features.file-upload.errors.php
@@ -38,6 +28,18 @@ class UploadController extends BaseController {
         'max_height' => 'Image exceeds maximum height',
         'min_height' => 'Image requires a minimum height'
     );
+
+    public function getIndex()
+    {
+//    protected $layout = 'crud::layouts.default';
+        return View::make('crud::layouts.default')->nest('content', 'uploader:getupload', $params->asArray());
+//        return View::make("crud::uploadview");
+    }
+
+    public function missingMethod($parameters = array())
+    {
+        return "Missing Method";
+    }
 
     function __construct($options = null, $initialize = true, $error_messages = null)
     {

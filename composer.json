@@ -1,6 +1,6 @@
 {
     "name": "laravella/uploader",
-    "description": "Handle file uploads",
+    "description": "Handle file uploads. For use with laravella/crud",
     "authors": [
         {
             "name": "laravella",
@@ -15,7 +15,6 @@
         "classmap": [
             "src/controllers",
             "src/commands",
-            "src/migrations",
             "src/database/seeds"
         ],
         "psr-0": {
