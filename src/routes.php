@@ -16,10 +16,11 @@ Route::filter('uploadauth', function()
         
 Route::when('upload/*', 'uploadauth');
 */
-//Route::controller('upload', 'UploadController');
 
-Route::get('uploader', function() {
-    return "uploader";
-});
+Route::controller('upload', 'UploadController');
+
+//Route::get('uploader', function() {
+//    return "uploader";
+//});
 
 ?>
