@@ -1,4 +1,11 @@
-<?php class UploadController extends Controller {
+<?php
+
+class UploadController extends Controller {
+
+    public function missingMethod($parameters = array())
+    {
+        return "Missing Method";
+    }
 
     protected $options;
     // PHP File Upload error message codes:
@@ -21,7 +28,6 @@
         'max_height' => 'Image exceeds maximum height',
         'min_height' => 'Image requires a minimum height'
     );
-
     protected $layout = 'crud::layouts.default';
     public $displayType = self::HTML; //or self::JSON or self::XML or self::HTML
 
@@ -36,10 +42,9 @@
         $action = 'getUpload';
 
 //        $params = $this->__makeParams(self::INFO, "Enter data to insert.", null, 'medias', $action);
-
 //        return View::make($this->layout)->nest('content', $params->view->name, $params->asArray());
-    }    
-    
+    }
+
     public function getIndex()
     {
 //    protected $layout = 'crud::layouts.default'; //$params->asArray()
@@ -47,12 +52,7 @@
 //        return View::make("crud::uploadview");
     }
 
-    public function missingMethod($parameters = array())
-    {
-        return "Missing Method";
-    }
-
-    function __construct($options = null, $initialize = true, $error_messages = null)
+    public static function getInstance($options = null, $initialize = true, $error_messages = null)
     {
         $this->options = array(
             'script_url' => $this->get_full_url() . '/',
@@ -871,7 +871,7 @@
                 $this->header('Location: ' . sprintf($redirect, rawurlencode($json)));
                 return;
             }
-            $this->head();
+            $this->getHead();
             if ($this->get_server_var('HTTP_CONTENT_RANGE'))
             {
                 $files = isset($content[$this->options['param_name']]) ?
@@ -985,7 +985,7 @@
                 . implode(', ', $this->options['access_control_allow_headers']));
     }
 
-    public function head()
+    public function getHead()
     {
         $this->header('Pragma: no-cache');
         $this->header('Cache-Control: no-store, no-cache, must-revalidate');
