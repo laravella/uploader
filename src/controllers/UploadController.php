@@ -1,4 +1,4 @@
-<?php class UploadController extends DbController {
+<?php class UploadController extends Controller {
 
     protected $options;
     // PHP File Upload error message codes:
@@ -35,9 +35,9 @@
 
         $action = 'getUpload';
 
-        $params = $this->__makeParams(self::INFO, "Enter data to insert.", null, 'medias', $action);
+//        $params = $this->__makeParams(self::INFO, "Enter data to insert.", null, 'medias', $action);
 
-        return View::make($this->layout)->nest('content', $params->view->name, $params->asArray());
+//        return View::make($this->layout)->nest('content', $params->view->name, $params->asArray());
     }    
     
     public function getIndex()

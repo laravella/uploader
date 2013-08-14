@@ -1,4 +1,4 @@
-<?php namespace Laravella\Crud;
+<?php namespace Laravella\Uploader;
 
 use Laravella\Crud\Log;
 use \Seeder;

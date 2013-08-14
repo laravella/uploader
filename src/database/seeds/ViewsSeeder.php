@@ -1,6 +1,4 @@
-<?php
-
-use Laravella\Crud\Log;
+<?php use Laravella\Crud\Log;
 
 class SeedViews extends Seeder {
 
