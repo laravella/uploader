@@ -1,6 +1,9 @@
 <?php
 
-class UploadController extends Controller {
+//use Laravella\Crud\Facades\Log;
+//use DbController;
+
+class UploadController extends DbController {
 
     public function missingMethod($parameters = array())
     {
@@ -48,7 +51,7 @@ class UploadController extends Controller {
     public function getIndex()
     {
 //    protected $layout = 'crud::layouts.default'; //$params->asArray()
-        return View::make('crud::layouts.default')->nest('content', 'uploader:getupload', array());
+        return View::make('crud::layouts.default')->nest('content', 'uploader::getupload', array('action'=>'getUpload', 'tableName'=>'medias'));
 //        return View::make("crud::uploadview");
     }
 
