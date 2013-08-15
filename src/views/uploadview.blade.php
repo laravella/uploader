@@ -1,5 +1,7 @@
 @include("crud::title")
-@include("crud::extra_head")
+
+@include("uploader::extra_head")
+
 @include('crud::layouts.admin.navbar')
 
 @include("uploader::getupload")
@@ -9,6 +11,3 @@
 @section('content')
     @yield('getUpload')
 @stop
-
-
-
