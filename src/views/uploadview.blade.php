@@ -1,4 +1,6 @@
-@include("crud::title")
+@section('title')
+File Upload
+@stop
 
 @include("uploader::assets")
 

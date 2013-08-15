@@ -1,4 +1,6 @@
-<?php class UploadController extends DbController {
+<?php use Laravella\Uploader\UploadManager;
+
+class UploadController extends DbController {
 
     public function missingMethod($parameters = array())
     {
@@ -12,15 +14,28 @@
     public function postUpload()
     {
         $action = 'postUpload';
+//        $x = new UploadManager();
+        try {
+            $response = UploadManager::getInstance();
+        } catch (Exception $e) {
+            echo $response;
+            echo $e->getMessage();
+            die;
+        }
     }
 
     public function getUpload()
     {
 
-        $action = 'getUpload';
-
-        $params = $this->__makeParams(self::INFO, "Enter data to insert.", null, 'medias', $action);
-//        return View::make($this->layout)->nest('content', $params->view->name, $params->asArray());
+        $action = 'postUpload';
+//        $x = new UploadManager();
+        try {
+            $response = UploadManager::getInstance();
+        } catch (Exception $e) {
+            echo $response;
+            echo $e->getMessage();
+            die;
+        }
     }
 
     public function getIndex()

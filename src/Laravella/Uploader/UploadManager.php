@@ -1,5 +1,7 @@
 <?php namespace Laravella\Uploader;
 
+use \stdClass;
+
 /**
  * Description of UploadManager
  *
@@ -31,12 +33,15 @@ class UploadManager {
 
     public static function getInstance($options = null, $initialize = true, $error_messages = null)
     {
+        
+        $response = "";
+        
         $uploadManager = new UploadManager();
         
         $uploadManager->options = array(
-            'script_url' => $this->get_full_url() . '/',
-            'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')) . '/files/',
-            'upload_url' => $this->get_full_url() . '/files/',
+            'script_url' => $uploadManager->get_full_url() . '/',
+            'upload_dir' => dirname($uploadManager->get_server_var('SCRIPT_FILENAME')).'/uploads/', //dirname($this->get_server_var('SCRIPT_FILENAME')) . '/files/',
+            'upload_url' => $uploadManager->get_full_url().'/uploads/',
             'user_dirs' => false,
             'mkdir_mode' => 0755,
             'param_name' => 'files',
@@ -130,34 +135,39 @@ class UploadManager {
         {
             $uploadManager->error_messages = array_merge($uploadManager->error_messages, $error_messages);
         }
+        
+      
         if ($initialize)
         {
-            $uploadManager->initialize();
+            $response = $uploadManager->initialize();
         }
+        return $response;
     }
 
     protected function initialize()
     {
+        $response = "";
         switch ($this->get_server_var('REQUEST_METHOD'))
         {
             case 'OPTIONS':
             case 'HEAD':
-                $this->head();
+                $response = $this->head();
                 break;
             case 'GET':
-                $this->get();
+                $response = $this->get();
                 break;
             case 'PATCH':
             case 'PUT':
             case 'POST':
-                $this->post();
+                $response = $this->post();
                 break;
             case 'DELETE':
-                $this->delete();
+                $response = $this->delete();
                 break;
             default:
                 $this->header('HTTP/1.1 405 Method Not Allowed');
         }
+        return $response;
     }
 
     protected function get_full_url()
