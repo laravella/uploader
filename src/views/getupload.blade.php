@@ -10,7 +10,7 @@
         <a href="#" id="btnLog" onclick="javascript:logBox();" class="btn">Log</a>
     </div>
     <div class="btn-group pull-right">
-        <a href="/db/select/{{$tableName}}" id="btnVisualize" class="btn"><i class="icon-remove"></i></a>
+        <a href="/upload/upload" id="btnVisualize" class="btn"><i class="icon-remove"></i></a>
     </div>
 </div>
 
