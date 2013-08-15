@@ -1,5 +1,7 @@
 @include("crud::title")
 
+@include("uploader::assets")
+
 @include("uploader::extra_head")
 
 @include('crud::layouts.admin.navbar')
