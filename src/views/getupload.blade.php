@@ -14,6 +14,8 @@
     </div>
 </div>
 
+@yield('messages')
+
 <div class="container">
     <!-- The file upload form used as target for the file upload widget -->
     <form id="fileupload" action="//jquery-file-upload.appspot.com/" method="POST" enctype="multipart/form-data">
