@@ -25,9 +25,10 @@
 
     public function getIndex()
     {
-//    protected $layout = 'crud::layouts.default'; //$params->asArray()
-        return View::make('crud::layouts.default')->nest('content', 'uploader::uploadview', array('action'=>'getUpload', 'tableName'=>'medias'));
-//        return View::make("crud::uploadview");
+        
+        $params = $this->__makeParams(self::INFO, "Enter data to insert.", null, 'medias', 'getUpload');
+
+        return View::make('crud::layouts.default')->nest('content', 'uploader::uploadview', $params->asArray());
     }
 
 

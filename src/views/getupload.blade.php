@@ -14,8 +14,6 @@
     </div>
 </div>
 
-
-
 <form method="POST" action="/dbupload/upload">
         <div class="row">
             <div class="span4">upload</div>
