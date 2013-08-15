@@ -1,5 +1,3 @@
-{{-------------------------------------------------------- getInsert --------------}}
-
 @section('getUpload') 
 @if($action == 'getUpload')
 <div class="page-header">
@@ -16,7 +14,7 @@
     </div>
 </div>
 
-@yield('messages')
+
 
 <form method="POST" action="/dbupload/upload">
         <div class="row">
@@ -27,6 +25,3 @@
 @endif
 @stop
 
-@section('content')
-    @yield('getUpload')
-@stop
