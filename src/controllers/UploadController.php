@@ -15,27 +15,21 @@ class UploadController extends DbController {
     {
         $action = 'postUpload';
 //        $x = new UploadManager();
+        $response = "";
         try {
             $response = UploadManager::getInstance();
         } catch (Exception $e) {
             echo $response;
             echo $e->getMessage();
-            die;
         }
+        return '';
     }
 
     public function getUpload()
     {
 
-        $action = 'postUpload';
-//        $x = new UploadManager();
-        try {
-            $response = UploadManager::getInstance();
-        } catch (Exception $e) {
-            echo $response;
-            echo $e->getMessage();
-            die;
-        }
+        $action = 'getUpload';
+
     }
 
     public function getIndex()
