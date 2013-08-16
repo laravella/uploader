@@ -1,6 +1,4 @@
 @section('css_assets')
-<!-- Bootstrap CSS Toolkit styles -->
-<link rel="stylesheet" href="packages/laravella/uploader/assets/styles/css/main.css">
 <!-- Generic page styles -->
 <link rel="stylesheet" href="packages/laravella/uploader/assets/css/style.css">
 <!-- Bootstrap styles for responsive website layout, supporting different screen sizes -->
@@ -13,12 +11,15 @@
 <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
 <link rel="stylesheet" href="packages/laravella/uploader/assets/css/jquery.fileupload-ui.css">
+{{----}}
+
 <!-- CSS adjustments for browsers with JavaScript disabled -->
 <noscript><link rel="stylesheet" href="packages/laravella/uploader/assets/css/jquery.fileupload-ui-noscript.css"></noscript>
+<!-- Bootstrap CSS Toolkit styles -->
+<link rel="stylesheet" href="packages/laravella/uploader/assets/styles/css/main.css">
 @stop
 
 @section('js_assets')
-
 <!-- The template to display files available for upload -->
 <script id="template-upload" type="text/x-tmpl">
 {% for (var i=0, file; file=o.files[i]; i++) { %}
@@ -88,6 +89,13 @@
 {% } %}
 </script>
 
+{{--
+this breaks the bootstrap navbar
+
+<!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
+<script src="packages/laravella/uploader/assets/js/vendor/bootstrap.min.js"></script>
+--}}
+
 <!-- <script src="packages/laravella/uploader/assets/js/jquery.min.js"></script> -->
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
 <script src="packages/laravella/uploader/assets/js/vendor/jquery.ui.widget.js"></script>
@@ -97,8 +105,6 @@
 <script src="packages/laravella/uploader/assets/js/load-image.min.js"></script>
 <!-- The Canvas to Blob plugin is included for image resizing functionality -->
 <script src="packages/laravella/uploader/assets/js/canvas-to-blob.min.js"></script>
-<!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
-<script src="packages/laravella/uploader/assets/js/vendor/bootstrap.min.js"></script>
 <!-- blueimp Gallery script -->
 <script src="packages/laravella/uploader/assets/js/jquery.blueimp-gallery.min.js"></script>
 <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
