@@ -14,7 +14,7 @@ Route::filter('uploadauth', function()
                 return Redirect::to('/admin/login');
         });
         
-Route::when('upload/*', 'uploadauth');
+Route::when('upload*', 'uploadauth');
 
 
 Route::controller('upload', 'UploadController');

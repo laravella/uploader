@@ -25,6 +25,8 @@ class UlSeedMenus extends Seeder
 
                 $adminId = DB::table('_db_menus')->where('label','Admin')->first()->id;
                 Log::write('info', $adminId . ' admin id');
+                
+                $this->__addMenu('divider', null, '', $adminId);
                 $menuId = $this->__addMenu('Uploads', '/upload', 'icon-file', $adminId);
                 
                 $this->__addMenuPermissions($menuId, 'superadmin');
