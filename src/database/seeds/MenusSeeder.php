@@ -2,7 +2,7 @@
 
 use Laravella\Crud\Log;
 
-class SeedMenus extends Seeder
+class UlSeedMenus extends Seeder
 {
 
         private function __addMenu($label, $href, $iconClass = 'icon-file', $parentId = null) {
@@ -23,14 +23,12 @@ class SeedMenus extends Seeder
 	public function run()
 	{
 
-                $adminId = DB::table('_db_menus')->where('label','Admin')->limit(1)->pluck('id');
-                $this->__addMenu('Uploads', '/upload', 'icon-file', $adminId);
+                $adminId = DB::table('_db_menus')->where('label','Admin')->first()->id;
+                Log::write('info', $adminId . ' admin id');
+                $menuId = $this->__addMenu('Uploads', '/upload', 'icon-file', $adminId);
                 
-                $this->__addMenuPermissions($metaDataId, 'superadmin');
-                $this->__addMenuPermissions($metaDataId, 'admin');
-                
-                $this->__addMenuPermissions($adminId, 'superadmin');
-                $this->__addMenuPermissions($adminId, 'admin');
+                $this->__addMenuPermissions($menuId, 'superadmin');
+                $this->__addMenuPermissions($menuId, 'admin');
                 
                 //tables
                 //fields
