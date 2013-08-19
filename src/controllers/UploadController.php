@@ -43,7 +43,7 @@ class UploadController extends DbController {
     public function getIndex()
     {
         
-        $params = $this->__makeParams(self::INFO, "Enter data to insert.", null, 'medias', 'getUpload');
+        $params = $this->__makeParams(self::INFO, "Select files to upload.", null, 'medias', 'getUpload');
 
         return View::make('crud::layouts.default')->nest('content', 'uploader::uploadview', $params->asArray());
     }
