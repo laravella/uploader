@@ -23,7 +23,7 @@ class UlSeedMenus extends Seeder
 	public function run()
 	{
 
-                $adminId = DB::table('_db_menus')->where('label','Admin')->first()->id;
+                $adminId = DB::table('_db_menus')->where('label','Contents')->first()->id;
                 Log::write('info', $adminId . ' admin id');
                 
                 $this->__addMenu('divider', null, '', $adminId);
