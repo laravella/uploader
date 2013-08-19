@@ -774,6 +774,7 @@
             // Initialize the global progress values:
             this._progress.loaded += data.loaded;
             this._progress.total += data.total;
+            console.log(data);
         },
 
         _onDone: function (result, textStatus, jqXHR, options) {
