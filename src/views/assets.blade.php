@@ -26,7 +26,7 @@
         <td>
             <span class="preview"></span>
         </td>
-        <td>
+        <td colspan="3">
             <div class="row">
                 <div class="span4">
                     <p class="name">{%=file.name%}</p>
@@ -34,48 +34,33 @@
                         <div><span class="label label-important">Error</span> {%=file.error%}</div>
                     {% } %}
                 </div>
-                <div class="span4">
-                    {% if (!o.files.error) { %}
-                        <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar" style="width:0%;"></div></div>
-                    {% } %}
-                </div>
                 <div class="span2">
                     <p class="size">{%=o.formatFileSize(file.size)%}</p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="span4">
-                    <select name="gallery_id">
-                        <option value="">-- Gallery --</option>
-                        @foreach($selects['gallery_id'] as $option)
-                            <option value="{{$option['value']}}">{{$option['text']}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="span4">
-                    <select name="mcollection_id">
-                        <option value="">-- Collection --</option>
-                        @foreach($selects['mcollection_id'] as $option)
-                            <option value="{{$option['value']}}">{{$option['text']}}</option>
-                        @endforeach
-                    </select>
-                </div>
                 <div class="span2">
-                    {% if (!o.files.error && !i && !o.options.autoUpload) { %}
-                        <button class="btn btn-primary start">
-                            <i class="icon-upload icon-white"></i>
-                            <span>Start</span>
-                        </button>
-                    {% } %}
                     {% if (!i) { %}
                         <button class="btn btn-warning cancel">
                             <i class="icon-ban-circle icon-white"></i>
                             <span>Cancel</span>
                         </button>
                     {% } %}
+                    {% if (!o.files.error && !i && !o.options.autoUpload) { %}
+                        <button class="btn btn-primary start">
+                            <i class="icon-upload icon-white"></i>
+                            <span>Start</span>
+                        </button>
+                    {% } %}
                 </div>
             </div>
-
+            <div>
+                <br />
+                <div class="span9">
+                    {% if (!o.files.error) { %}
+                        <div class="progress progress-success progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="bar" style="width:0%;"></div></div>
+                    {% } %}
+                </div>
+            </div>
+        </td>
     </tr>
 {% } %}
 </script>
@@ -102,11 +87,13 @@
             <span class="size">{%=o.formatFileSize(file.size)%}</span>
         </td>
         <td>
-            <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+        <!--
+            <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="/dbapi/delete/medias"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                 <i class="icon-trash icon-white"></i>
                 <span>Delete</span>
             </button>
-            <input type="checkbox" name="delete" value="1" class="toggle">
+            <input type="checkbox" name="delete" value="1" class="toggle"> 
+            -->
         </td>
     </tr>
 {% } %}

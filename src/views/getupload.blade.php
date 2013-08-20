@@ -23,7 +23,8 @@
         <noscript><input type="hidden" name="redirect" value=""></noscript>
         <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
         <div class="row fileupload-buttonbar">
-            <div class="span7">
+            <div class="span12">
+                <div class="btn-group">
                 <!-- The fileinput-button span is used to style the file input field as button -->
                 <span class="btn btn-success fileinput-button">
                     <i class="icon-plus icon-white"></i>
@@ -38,11 +39,29 @@
                     <i class="icon-ban-circle icon-white"></i>
                     <span>Cancel upload</span>
                 </button>
+                <!--
                 <button type="button" class="btn btn-danger delete">
                     <i class="icon-trash icon-white"></i>
                     <span>Delete</span>
                 </button>
-                <input type="checkbox" class="toggle">
+                <button type="button" class="btn btn-danger toggle">
+                    <i class="icon-check icon-white"></i>
+                </button>
+                -->
+                </div>
+                <select name="gallery_id">
+                    <option value="">-- Gallery --</option>
+                    @foreach($selects['gallery_id'] as $option)
+                        <option value="{{$option['value']}}">{{$option['text']}}</option>
+                    @endforeach
+                </select>
+                <select name="mcollection_id">
+                    <option value="">-- Collection --</option>
+                    @foreach($selects['mcollection_id'] as $option)
+                        <option value="{{$option['value']}}">{{$option['text']}}</option>
+                    @endforeach
+                </select>
+                
                 <!-- The loading indicator is shown during file processing -->
                 <span class="fileupload-loading"></span>
             </div>
