@@ -49,15 +49,15 @@
                 </button>
                 -->
                 </div>
-                <select name="gallery_id">
-                    <option value="">-- Gallery --</option>
-                    @foreach($selects['gallery_id'] as $option)
-                        <option value="{{$option['value']}}">{{$option['text']}}</option>
-                    @endforeach
-                </select>
                 <select name="mcollection_id">
                     <option value="">-- Collection --</option>
                     @foreach($selects['mcollection_id'] as $option)
+                        <option value="{{$option['value']}}">{{$option['text']}}</option>
+                    @endforeach
+                </select>
+                <select name="gallery_id">
+                    <option value="">-- Gallery --</option>
+                    @foreach($selects['gallery_id'] as $option)
                         <option value="{{$option['value']}}">{{$option['text']}}</option>
                     @endforeach
                 </select>
