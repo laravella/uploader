@@ -1,11 +1,7 @@
 {
     "name": "laravella/uploader",
     "description": "Handle file uploads. For use with laravella/crud",
-<<<<<<< HEAD
-    "keywords": ["ravel","laravel","cms"],
-=======
     "keywords": ["laravel","cms","radiate","laravella","ravel"],
->>>>>>> d560f1d8eba8dcfda272cd4db559b38ca1eb9471
     "license": "MIT",
     "authors": [
         {
