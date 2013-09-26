@@ -7,21 +7,27 @@ class UploadController extends DbController {
         return "Missing Method";
     }
 
-
     protected $layout = 'crud::layouts.default';
     public $displayType = self::HTML; //or self::JSON or self::XML or self::HTML
 
+    public function getTest()
+    {
+        $options = Options::getType('upload');
+        echo var_dump($options);
+        die;
+    }
+            
     public function postUpload()
     {
         $action = 'postUpload';
 //        $x = new UploadManager();
         $response = "";
         try {
-            
-                $response = UploadManager::getInstance();
+                $options = Options::getType('upload');
+                $response = UploadManager::getInstance($options);
+                /*
                 $name = $response['files'][0]->name;
                 $url = $response['files'][0]->url;
-                
                 $mcollection_id = Input::get('mcollection_id');
                 $gallery_id = Input::get('gallery_id');
 
@@ -29,7 +35,7 @@ class UploadController extends DbController {
                     'url'=>$url, 'file_name'=>$name, 'user_id'=>0, 'gallery_id'=>$gallery_id);
 
                 DB::table('medias')->insert($newMedia);
-                
+                */
         } catch (Exception $e) {
             echo $e->getMessage();
             echo $response;
