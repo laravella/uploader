@@ -25,7 +25,7 @@ class UploadController extends DbController {
         try {
                 $options = Options::getType('upload');
                 $response = UploadManager::getInstance($options);
-                /*
+
                 $name = $response['files'][0]->name;
                 $url = $response['files'][0]->url;
                 $mcollection_id = Input::get('mcollection_id');
@@ -35,7 +35,7 @@ class UploadController extends DbController {
                     'url'=>$url, 'file_name'=>$name, 'user_id'=>0, 'gallery_id'=>$gallery_id);
 
                 DB::table('medias')->insert($newMedia);
-                */
+
         } catch (Exception $e) {
             echo $e->getMessage();
             echo $response;
