@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="http://blueimp.github.io/cdn/css/bootstrap-ie6.min.css">
 <![endif]-->
 <!-- blueimp Gallery styles -->
-<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+<link rel="stylesheet" href="packages/laravella/uploader/assets/css/blueimp-gallery.min.css">
 <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
 <link rel="stylesheet" href="packages/laravella/uploader/assets/css/jquery.fileupload-ui.css">
 
@@ -106,7 +106,7 @@ this breaks the bootstrap navbar
 <script src="packages/laravella/uploader/assets/js/vendor/bootstrap.min.js"></script>
 --}}
 
-<!-- <script src="packages/laravella/uploader/assets/js/jquery.min.js"></script> -->
+<script src="packages/laravella/uploader/assets/js/jquery-1.8.3.min.js"></script>
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
 <script src="packages/laravella/uploader/assets/js/vendor/jquery.ui.widget.js"></script>
 <!-- The Templates plugin is included to render the upload/download listings -->

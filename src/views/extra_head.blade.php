@@ -1,4 +1,4 @@
-{{-- crud::layouts.default includes extra_head in the html head --}}
+{{-- skins::common.default includes extra_head in the html head --}}
 @section('extra_head')
 <!-- Force latest IE rendering engine or ChromeFrame if installed -->
 <!--[if IE]>

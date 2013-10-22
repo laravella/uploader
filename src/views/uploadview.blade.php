@@ -6,13 +6,13 @@ File Upload
 
 @include("uploader::extra_head")
 
-@include('crud::layouts.admin.navbar')
+@include('skins::'.$skin['admin'].'.inc.navbar')
 
-@include("crud::messages")
+@include("skins::".$skin['admin'].".inc.messages")
 
 @include("uploader::getupload")
 
-@include("crud::bottom")
+@include("skins::".$skin['admin'].".inc.bottom")
 
 @section('content')
     @yield('getUpload')

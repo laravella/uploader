@@ -4,12 +4,12 @@ class SeedViews extends Seeder {
 
     public function run()
     {
-        $viewId = DB::table('_db_views')->where("name", "crud::dbview")->first()->id;
+        $viewId = DB::table('_db_views')->where("name", "skins::arctic.dbview")->first()->id;
         $this->__populateTableActions($viewId, true);
     }
 
     /**
-     * Populate table _db_table_action_views
+     * Populate table _db_pages
      * 
      * @param type $viewId
      * @param type $doPermissions Will also populate permissions tables if true
@@ -20,7 +20,7 @@ class SeedViews extends Seeder {
         try
         {
             $tables = DB::table('_db_tables')->where('name', 'medias')->get();
-            $actions = DB::table('_db_actions')->where('name', 'crud::dbview')->get();
+            $actions = DB::table('_db_actions')->where('name', "skins::arctic.dbview")->get();
 
             if ($doPermissions)
             {
@@ -32,7 +32,7 @@ class SeedViews extends Seeder {
                 foreach ($actions as $action)
                 {
                     $arr = array('table_id' => $table->id, 'action_id' => $action->id, 'view_id' => $viewId, 'page_size' => 10, 'title' => $table->name);
-                    DB::table('_db_table_action_views')->insert($arr);
+                    DB::table('_db_pages')->insert($arr);
                     if ($doPermissions)
                     {
                         foreach ($users as $user)
