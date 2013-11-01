@@ -10,12 +10,12 @@ Route::filter('uploadauth', function()
                 }
             }
 
-            if (Auth::guest())
+            if (Auth::guest()) {
                 return Redirect::to('/admin/login');
+            }
         });
         
 Route::when('upload*', 'uploadauth');
-
 
 Route::controller('upload', 'UploadController');
 

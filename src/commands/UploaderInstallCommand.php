@@ -37,10 +37,6 @@ class UploaderInstallCommand extends Command {
 	 */
 	public function fire()
 	{
-                $this->call('config:publish',array('package'=>'laravella/uploader'));
-                $this->call('asset:publish',array('package'=>'laravella/uploader'));
-                
-		$this->call('db:seed',array('--class'=>'Laravella\\Uploader\\UploaderDatabaseSeeder'));
 		$this->info('Uploader installation complete.');
 	}
 

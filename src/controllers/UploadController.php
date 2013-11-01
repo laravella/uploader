@@ -12,8 +12,8 @@ class UploadController extends DbController {
     public function getTest()
     {
         $options = Options::getType('upload');
-//        echo var_dump($options);
-//        die;
+        echo var_dump($options);
+        die;
     }
             
     public function postUpload()
@@ -50,11 +50,13 @@ class UploadController extends DbController {
     }
 
     public function getIndex()
-    {
-        
+    { 
         $params = $this->__makeParams(self::INFO, "Select files to upload.", null, 'medias', 'getUpload');
 
-        return View::make('skins::'.Options::get('skin','admin').'.default')->nest('content', 'uploader::uploadview', $params->asArray());
+        $skin = 'skins::'.Options::get('skin').'.default';
+        $upload = 'skins::'.Options::get('skin').'.uploader.uploadview';
+        return View::make($skin)
+                ->nest('content', $upload, $params->asArray());
     }
 
 
