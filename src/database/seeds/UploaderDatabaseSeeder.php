@@ -10,13 +10,9 @@ class UploaderDatabaseSeeder extends Seeder {
         $this->call('UlSeedMenus');
         Log::write("success", "Populated _db_menus");
 
-//        $this->call('SeedOptions');
-//        Log::write("success", "Populated _db_options");
+//        $this->call('SeedAssets');
+        Log::write("success", "Populated _db_assets");
 
-//        $this->call('SeedActions');
-//        Log::write("success", "Populated _db_actions");
-        
-        
     }
 
 }
