@@ -1,6 +1,7 @@
 {
     "name": "laravella/uploader",
     "description": "Handle file uploads. For use with laravella/crud",
+    "version": "v4.0.20131105-beta",
     "keywords": ["laravel","cms","radiate","laravella","ravel"],
     "license": "MIT",
     "authors": [
