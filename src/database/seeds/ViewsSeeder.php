@@ -4,7 +4,7 @@ class SeedViews extends Seeder {
 
     public function run()
     {
-        $viewId = DB::table('_db_views')->where("name", "skins::arctic.dbview")->first()->id;
+        $viewId = DB::table('_db_views')->where("name", Options::get('skin').".dbview")->first()->id;
         $this->__populateTableActions($viewId, true);
     }
 
@@ -20,7 +20,7 @@ class SeedViews extends Seeder {
         try
         {
             $tables = DB::table('_db_tables')->where('name', 'medias')->get();
-            $actions = DB::table('_db_actions')->where('name', "skins::arctic.dbview")->get();
+            $actions = DB::table('_db_actions')->where('name', Options::get('skin').".dbview")->get();
 
             if ($doPermissions)
             {
