@@ -54,7 +54,7 @@ class UploadController extends DbController {
         $params = $this->__makeParams(self::INFO, "Select files to upload.", null, 'medias', 'getUpload');
 
         $skin = Options::get('skin').'.default';
-        $upload = Options::get('skin').'.uploader.uploadview';
+        $upload = Options::get('skin').'.uploadview';
         return View::make($skin)
                 ->nest('content', $upload, $params->asArray());
     }
