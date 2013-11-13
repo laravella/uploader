@@ -49,7 +49,7 @@ class UploadController extends DbController {
 
     }
 
-    public function getIndex()
+    public function getIndex($slug='')
     { 
         $params = $this->__makeParams(self::INFO, "Select files to upload.", null, 'medias', 'getUpload');
 
