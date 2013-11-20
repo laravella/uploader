@@ -2,6 +2,11 @@
 
 class UploadController extends DbController {
 
+    private $layoutName = '.default';
+    private $viewName = '.uploadview';
+
+    private $skinType = 'admin'; //admin, front, (later : upload ... etc.)
+    
     public function missingMethod($parameters = array())
     {
         return "Missing Method";
@@ -51,12 +56,14 @@ class UploadController extends DbController {
 
     public function getIndex($slug='')
     { 
-        $params = $this->__makeParams(self::INFO, "Select files to upload.", null, 'medias', 'getUpload');
+        $params = $this->__makeParams('medias', 'getUpload', null);
 
-        $skin = Options::get('skin').'.default';
-        $upload = Options::get('skin').'.uploadview';
-        return View::make($skin)
-                ->nest('content', $upload, $params->asArray());
+        //return $this->makeView($params->asArray());
+        
+        $layout = Options::get('skin').$this->layoutName;
+        $viewName = Options::get('skin').$this->viewName;
+        
+        return View::make($layout)->nest('content', $viewName, $params->asArray());
     }
 
 
