@@ -1,4 +1,5 @@
 <?php use Laravella\Uploader\UploadManager;
+use Laravella\Crud\Params;
 
 class UploadController extends DbController {
 
@@ -56,10 +57,10 @@ class UploadController extends DbController {
 
     public function getIndex($slug='')
     { 
-        $params = $this->__makeParams('medias', 'getUpload', null);
+        $params = new Params('medias', 'getUpload', null);
 
-        //return $this->makeView($params->asArray());
-        
+//        return $this->makeView($params->asArray());
+
         $layout = Options::get('skin').$this->layoutName;
         $viewName = Options::get('skin').$this->viewName;
         
