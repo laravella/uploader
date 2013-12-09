@@ -59,10 +59,9 @@ class UploadController extends DbController {
     { 
         $params = new Params('medias', 'getUpload', null);
 
-//        return $this->makeView($params->asArray());
-
-        $layout = Options::get('skin').$this->layoutName;
-        $viewName = Options::get('skin').$this->viewName;
+        $skin = Options::getSkin();
+        $layout = $skin['admin'] . $this->layoutName;
+        $viewName = $skin['admin'] . $this->viewName;
         
         return View::make($layout)->nest('content', $viewName, $params->asArray());
     }
