@@ -369,6 +369,9 @@ class UploadManager {
         {
             return false;
         }
+        
+        
+        
         $max_width = $options['max_width'];
         $max_height = $options['max_height'];
         $scale = min(
